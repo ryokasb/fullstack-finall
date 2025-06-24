@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class FacturaService {
@@ -22,10 +21,6 @@ public class FacturaService {
 
     public List<Factura> buscarTodas() {
         return facturaRepository.findAll();
-    }
-
-    public Optional<Factura> buscarPorId(Long id) {
-        return facturaRepository.findById(id);
     }
 
     public Factura crearFactura(Long solicitudId, BigDecimal monto, String estadoPago) {

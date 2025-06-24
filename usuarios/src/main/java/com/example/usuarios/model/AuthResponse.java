@@ -1,6 +1,5 @@
-package com.example.usuarios.model;
+package com.example.usuarios.model;  // En el mismo paquete que Usuario y Rol
 
-import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,17 +7,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Schema(description = "Respuesta de autenticación - Contiene los datos del usuario autenticado y el token JWT")
 public class AuthResponse {
-    @Schema(description = "Nombre de usuario", example = "admin")
     private String username;
-    
-    @Schema(description = "Rol del usuario", example = "ADMIN, TECNICO, USUARIO")
-    private String rol;
-    
-    @Schema(description = "Mensaje de confirmación", example = "Inicio de sesión exitoso")
-    private String mensaje;
-    
-    @Schema(description = "Token JWT para autenticación", example = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...")
-    private String token;
+    private String rol;       // Nombre del rol (ej: "ADMIN", "TECNICO")
+    private String mensaje;   // Ej: "Inicio de sesión exitoso"
+    private String token;     // JWT token
 }
